@@ -87,10 +87,11 @@ def time_stats(df):
         df['hour'] = df['Start Time'].dt.hour
         print("the most common start hour is {}".format(df['hour'].mode().max()))
 
-        print("\nThis took %s seconds." % (time.time() - start_time))
-        print('-'*40)
     except:
         print("*************An error occurred*************")
+	
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
             
 
 def station_stats(df):
@@ -108,11 +109,12 @@ def station_stats(df):
 
         # TO DO: display most frequent combination of start station and end station trip
         print("The most frequent combination of start station and end station trip are\n{}".format(df[['Start Station', 'End Station']].mode().max()))
-
-        print("\nThis took %s seconds." % (time.time() - start_time))
-        print('-'*40)
+	
     except:
         print("*************An error occurred*************")
+	
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -127,11 +129,12 @@ def trip_duration_stats(df):
         # TO DO: display mean travel time
         print("mean travel time is {}".format(df["Trip Duration"].sum()/len(df["Trip Duration"])))
 
-        print("\nThis took %s seconds." % (time.time() - start_time))
-        print('-'*40)
     except:
         print("*************An error occurred*************")
-
+	
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
+	
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -149,24 +152,25 @@ def user_stats(df):
         print("The earliest year of birth is {}".format(df['Birth Year'].min()))
         print("The most recent year of birth is {}".format(df['Birth Year'].max()))
         print("The most common year of birth is {}".format(df['Birth Year'].mode().max()))
-        print("\nThis took %s seconds." % (time.time() - start_time))
-        print('-'*40)
+
     except:
         print("*************An error occurred*************")
-
+	
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
+	
 def display_data(df):
     """Displays rows of data from the dataframe to the user"""
     display = input('\nWould you like to view the first 5 rows of data? Enter yes or no.\n').lower()
-    start_time = time.time()
     
     loc = 0
     while(display == 'yes'):
+	start_time = time.time()
         for _ in range(5):
             print(df.iloc[loc])
             loc += 1
-        display = input("Do you wish to view the next 5 rows of data? Enter yes or no.\n").lower()
-    
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    	print("\nThis took %s seconds." % (time.time() - start_time))
+	display = input("Do you wish to view the next 5 rows of data? Enter yes or no.\n").lower()   
     print('-'*40)
         
 def main():
