@@ -14,6 +14,6 @@ All cities share these columns:
    - End Station
    - User Type (Subscriber or Customer)
 
-Chicago, and new york city has two extra columns for:
+Chicago, and new york city have two extra columns for:
    - Gender
    - Birth Year
